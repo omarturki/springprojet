@@ -31,7 +31,7 @@ private table table;
 @ManyToMany
 @JoinTable(name = "Tickets_Mets",   
 joinColumns = {@JoinColumn (name = "Ticket_id")}, 
-    inverseJoinColumns = {@JoinColumn(name = "Met_Nom")}
+    inverseJoinColumns = {@JoinColumn(name = "Met_id")}
 )
 private List<Met> mets;
 }
