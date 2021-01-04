@@ -1,6 +1,6 @@
 package tekup.module;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -12,18 +12,21 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
-
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Ticket {
 @Id
 @GeneratedValue (strategy = GenerationType.IDENTITY)
 private Integer numero;
-private LocalDate date;
+private LocalDateTime date;
 private Integer nbCouvert;
-private Double addition;
+private double addition;
 @ManyToOne
 private Client client;
 @ManyToOne
@@ -34,4 +37,11 @@ joinColumns = {@JoinColumn (name = "Ticket_id")},
     inverseJoinColumns = {@JoinColumn(name = "Met_id")}
 )
 private List<Met> mets;
+public double getaddition() {
+	
+	return mets.stream().mapToDouble(x->x.getPrix()).sum();
+	
 }
+}
+
+
