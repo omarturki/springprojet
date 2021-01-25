@@ -30,7 +30,7 @@ private double addition;
 @ManyToOne
 private Client client;
 @ManyToOne
-private table table;
+private table tableresto;
 @ManyToMany
 @JoinTable(name = "Tickets_Mets",   
 joinColumns = {@JoinColumn (name = "Ticket_id")}, 
@@ -39,8 +39,8 @@ joinColumns = {@JoinColumn (name = "Ticket_id")},
 private List<Met> mets;
 public double getaddition() {
 	
-	return mets.stream().mapToDouble(x->x.getPrix()).sum();
-	
+	//return mets.stream().mapToDouble(x->x.getPrix()).sum();
+	return addition;
 }
 }
 

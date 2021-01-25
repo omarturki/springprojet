@@ -5,15 +5,17 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class ClientDTO {
 	
-	private Integer id;
+	private Integer id=0;
 	@NotBlank (message = "champs obligatoire")
 	private String name;
 	@NotBlank (message = "champs obligatoire")
