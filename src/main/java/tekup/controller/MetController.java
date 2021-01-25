@@ -65,7 +65,6 @@ public class MetController {
 	
 	@PutMapping("/modifier/plat")
 	public Plat modifierPlat(@Valid @RequestBody Plat plat) {
-		//System.out.println("++++++++++++plat = "+plat);
 		return metService.modifierPlat(plat);
 	}
 	
@@ -82,15 +81,15 @@ public class MetController {
 	public List<Met> listerMets (){
 		return metService.listerMets();
 	}
-	@GetMapping("/plusAcheter/{d1}/{d2}")
-	public MetDto platPlusAcheter(@PathVariable("d1") String d1,@PathVariable("d2") String d2) {
+	@GetMapping("/PlatplusAcheter/{date}/{date2}")
+	public MetDto platPlusAcheter(@PathVariable("date") String date,@PathVariable("date2") String date2) {
 		
-		LocalDate dd1=LocalDate.parse(d1);
-		LocalDate dd2=LocalDate.parse(d2);
-		if(dd1.isAfter(dd2))
+		LocalDate d1=LocalDate.parse(date);
+		LocalDate d2=LocalDate.parse(date2);
+		if(d1.isAfter(d2))
 			throw new DateTimeException("Date invalide ");
 		
-		return metService.platPlusAcheter(dd1,dd2);
+		return metService.platPlusAcheter(d1,d2);
 	}
 }
 

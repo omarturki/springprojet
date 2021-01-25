@@ -2,6 +2,7 @@ package tekup.controller;
 
 
 
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -19,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 
 
 import lombok.AllArgsConstructor;
@@ -61,6 +61,26 @@ public class TicketController {
 	@DeleteMapping("/supprimer")
 	public Ticket supprimerTicket(@RequestBody TicketDTO ticketDto) {
 		return service.supprimerTicket(ticketDto);
+	}
+	
+	@GetMapping("/getAdd")
+	public double getAdd(@RequestBody TicketDTO ticketDto) {
+		return service.getAdd(ticketDto);
+	}
+	
+	
+	@GetMapping("/getRevenue/{date}/{period}")
+	public double getRevenue(@PathVariable("date") String date,@PathVariable("period") String s) {
+		return service.getRevenue(LocalDate.parse(date),s);
+	}
+	
+	@GetMapping("/getRevenuePourPeriode/{d1}/{d2}")
+	public double getRevenuePourPeriode(@PathVariable("d1") String d1,@PathVariable("d2") String d2) {
+		LocalDate d11=LocalDate.parse(d1);
+		LocalDate d22=LocalDate.parse(d2);
+		if(d11.isAfter(d22))
+			 throw new DateTimeException("Dates invalides !");
+		return service.getRevenuePourPeriode(d11, d22);
 	}
 
 

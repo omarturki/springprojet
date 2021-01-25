@@ -29,37 +29,6 @@ import tekup.service.ClientInter;
 @RestController
 @RequestMapping("/client")
 public class ClientController {
-//	private ClientInter service;
-//
-//	@PostMapping ("/ajouter")
-//	public ClientDTO ajouterclient(@Valid @RequestBody ClientDTO clientDTO  ) {
-//		//System.out.println(service);
-//		return service.ajouter(clientDTO);
-//		
-//	}
-//	@PutMapping ("/modifier")
-//	public ClientDTO modifierclient(@Valid @RequestBody ClientDTO clientDTO   ) {
-//		//System.out.println(service);
-//		return service.modifier(clientDTO);
-//		
-//	}
-//	@DeleteMapping ("/delete")
-//	public void deleteclient(@Valid @RequestBody ClientDTO clientDTO  ) {
-//		//System.out.println(service);
-//		service.supprimer(clientDTO);
-//		System.out.println("vous avez supprimer");
-//		
-//	}
-//	@GetMapping ("/list")
-//	public List<ClientDTO> listclient( ) {
-//		//System.out.println(service);
-//		return service.listclient();
-//		
-//	}
-//	@ExceptionHandler(ClientNotFoundException.class)
-//	public ResponseEntity<String> handleNoSuchElementException(ClientNotFoundException e) {
-//		return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
-//	}
 	private ClientRepo clientRepository;
 	private ClientInter iClientService;	
 	
@@ -71,9 +40,8 @@ public class ClientController {
 	
 	@DeleteMapping("/supprimer")
 	public ResponseEntity<String> supprimer(@RequestBody ClientDTO clientDto){
-		System.out.println("id  *****    ="+ clientDto.getId());
 		iClientService.supprimer(clientDto);
-		return new ResponseEntity<String>("Client supprimé avec succes !", HttpStatus.OK);
+		return new ResponseEntity<String>("Client a été supprimer avec succes !", HttpStatus.OK);
 		
 	}
 	
