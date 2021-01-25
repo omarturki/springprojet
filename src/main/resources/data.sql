@@ -1,0 +1,14 @@
+insert into client (courriel, date_de_naissance, name, prenom, telephone) values ("omar@gmail.com", "1993-01-05", "omar", "turki", "+21623760043");
+insert into client (courriel, date_de_naissance, name, prenom, telephone) values ("turki@gmail.com", "1995-01-05", "omran", "jerbi", "0023760043");
+insert into client (courriel, date_de_naissance, name, prenom, telephone) values ("jerba@gmail.com", "1994-01-05", "amar", "tek", "23760043");
+insert into client (courriel, date_de_naissance, name, prenom, telephone) values ("tekup@gmail.com", "1992-01-05", "amor", "tounsi", "+23760043");
+insert into met (nom, prix, type) values ("soupe", 10.0, 'Entree');
+insert into met (nom, prix, type) values ("harisse", 5.0, 'Entree');
+insert into met (nom, prix, type) values ("eau", 1.0, 'Entree');
+insert into met (nom, prix, type) values ("jus frais", 15.0, 'Dessert');
+insert into met (nom, prix, type) values ("vodka", 85.0, 'Dessert');
+insert into met (nom, prix, type) values ("fruit", 25.0, 'Dessert');
+insert into met (nom, prix, type) values ("kousksi tunisien", 55.0, 'Plat');
+insert into met (nom, prix, type) values ("plat grillé", 15.0, 'Plat');
+insert into met (nom, prix, type) values ("spaguetty fruit de mer", 35.0, 'Plat');
+insert into met (nom, prix, type) values ("salade", 5.0, 'Plat');
