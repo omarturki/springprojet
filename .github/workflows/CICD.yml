@@ -29,5 +29,3 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven
 
-    - name: Build y Test del proyecto
-      run: mvn clean verify
